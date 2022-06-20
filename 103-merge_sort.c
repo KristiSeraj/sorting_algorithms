@@ -63,8 +63,15 @@ void merge_recursion(int *array, int left, int right)
 		mid = left + (right - left) / 2;
 		merge_recursion(array, left, mid);
 		merge_recursion(array, mid + 1, right);
+		printf("Merging...\n");
+		printf("[left]: ");
+		print_array(array, mid);
+		printf("[right]: ");
+		print_array(array + mid, right - mid);
 		merge_array(array, left, mid, right);
-	}
+		printf("[Done]: ");
+		print_array(array, right + 1);
+	}	
 }
 /**
  * merge_sort - sorts an array of integers in ascending order using
